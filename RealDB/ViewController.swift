@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    @IBOutlet weak private var _labelName       : UITextField!
+    @IBOutlet weak private var _labelSurname    : UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,27 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 1
+    }
 
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell    = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        return cell
+    }
+    
+    //MARK:UBActions
+    @IBAction func btnRegisterUser(_ sender: UIButton) {
+        DataBaseManager.addPersonToDb(Person.createPerson(name: <#T##String#>, surname: <#T##String#>)){
+            
+            (sucess, result) -> (Void) in
+            if(sucess) {
+                self.tableViewResults.reloadData()
+            }
+            else {
+                // error
+            }
+        }
+    }
 }
 

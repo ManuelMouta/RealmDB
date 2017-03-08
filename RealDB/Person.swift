@@ -11,6 +11,14 @@ import RealmSwift
 
 class Person : Object{
     dynamic var name    : String = ""
-    dynamic var surName : String = ""
+    dynamic var surname : String = ""
 
+    static func createPerson(name:String,surname:String) -> Person{
+        
+        let person      = Person()
+        person.name     = name
+        person.surname  = surname
+        
+        return person
+    }
 }

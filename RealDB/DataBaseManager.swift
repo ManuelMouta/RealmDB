@@ -7,7 +7,23 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct DataBaseManager{
     
+    func addPersonToDb(person : Person,completion:@escaping (Bool)->(Void)){
+        
+        do {
+            let realm = try Realm()
+            try! realm.write {
+                realm.add(person)
+                completion(true)
+            }
+        } catch let error as NSError {
+            //handle error
+            completion(false)
+        }
+
+        
+    }
 }
