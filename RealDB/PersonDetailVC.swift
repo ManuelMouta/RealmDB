@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class PersonDetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,DataSentDelegate {
+class PersonDetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate,DataSentDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
     
     //MARK: IBOutlets
     @IBOutlet weak private var _labelPersonName: UITextField!
@@ -27,6 +27,22 @@ class PersonDetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Pet.pets[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Pet.pets.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -62,6 +78,8 @@ class PersonDetailVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBAction func btnUpdatePerson(_ sender: UIButton) {
         
         DataBaseManager.updatePerson(person: ViewController.listOfPersons[index],name: _labelPersonName.text!, surname: _labelPersonSurname.text!)
+        
+        //Show UI Alert
         UIAlerts.showUserUpdatedAlert(vc: self)
         
     }

@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Pet : Object{
+    static let pets = ["Dog","Cat","Bird"]
     dynamic var type    : String = ""
     
     static func createPerson(type:String) -> Pet{
