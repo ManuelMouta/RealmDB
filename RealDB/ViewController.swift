@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    @IBOutlet weak private var _labelName       : UITextField!
-    @IBOutlet weak private var _labelSurname    : UITextField!
-
+    //MARK: IBOutlets
+    @IBOutlet weak private var  _labelName       : UITextField!
+    @IBOutlet weak private var  _labelSurname    : UITextField!
+    @IBOutlet weak var          tableView        : UITableView!
+    
+    //MARK: Local Variables
+    static var listOfPersons = DataBaseManager.getPersonsList() as! Results<Person>
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,24 +27,29 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 1
+        return ViewController.listOfPersons.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell    = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+
+        let cell                    = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        let person                  = ViewController.listOfPersons[indexPath.row]
+        cell.textLabel?.text        = person.name + person.surname
+        
         return cell
     }
     
     //MARK:UBActions
     @IBAction func btnRegisterUser(_ sender: UIButton) {
-        DataBaseManager.addPersonToDb(Person.createPerson(name: <#T##String#>, surname: <#T##String#>)){
+        
+        DataBaseManager.addPersonToDb(name: _labelName, surname: _labelSurname){
             
-            (sucess, result) -> (Void) in
-            if(sucess) {
-                self.tableViewResults.reloadData()
-            }
-            else {
-                // error
+            (success,msg) -> (Void) in
+            if(success) {
+                DataBaseManager.syncPersonsList()
+                self.tableView.reloadData()
+            }else{
+                //
             }
         }
     }

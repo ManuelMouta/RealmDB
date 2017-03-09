@@ -94,6 +94,7 @@
                     <connections>
                         <outlet property="_labelName" destination="dY9-nN-Dsm" id="cwC-bh-lSr"/>
                         <outlet property="_labelSurname" destination="HdD-hg-yZM" id="ZX4-xu-SsZ"/>
+                        <outlet property="tableView" destination="duy-rk-K69" id="WrC-Bs-poi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

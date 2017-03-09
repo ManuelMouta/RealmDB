@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61450A7D1E7155070020AE85 /* PersonValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61450A7C1E7155070020AE85 /* PersonValidations.swift */; };
+		61450A801E7163130020AE85 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61450A7F1E7163130020AE85 /* ErrorHandling.swift */; };
+		61450A821E716A9D0020AE85 /* TableViewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61450A811E716A9D0020AE85 /* TableViewDataManager.swift */; };
 		61919A771E7072AE00705C6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61919A761E7072AE00705C6E /* AppDelegate.swift */; };
 		61919A791E7072AE00705C6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61919A781E7072AE00705C6E /* ViewController.swift */; };
 		61919A7C1E7072AE00705C6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61919A7A1E7072AE00705C6E /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		61450A7C1E7155070020AE85 /* PersonValidations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonValidations.swift; sourceTree = "<group>"; };
+		61450A7F1E7163130020AE85 /* ErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		61450A811E716A9D0020AE85 /* TableViewDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataManager.swift; sourceTree = "<group>"; };
 		61919A731E7072AE00705C6E /* RealmDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61919A761E7072AE00705C6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61919A781E7072AE00705C6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +68,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61450A7E1E715F570020AE85 /* InputValidations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = InputValidations;
+			sourceTree = "<group>";
+		};
 		61919A6A1E7072AE00705C6E = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +120,10 @@
 		61919A891E7072B600705C6E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				61450A7E1E715F570020AE85 /* InputValidations */,
+				61450A7C1E7155070020AE85 /* PersonValidations.swift */,
+				61450A7F1E7163130020AE85 /* ErrorHandling.swift */,
+				61450A811E716A9D0020AE85 /* TableViewDataManager.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -235,6 +252,9 @@
 			files = (
 				61919A911E7073D700705C6E /* DataBaseManager.swift in Sources */,
 				61919A8F1E70732A00705C6E /* Person.swift in Sources */,
+				61450A821E716A9D0020AE85 /* TableViewDataManager.swift in Sources */,
+				61450A7D1E7155070020AE85 /* PersonValidations.swift in Sources */,
+				61450A801E7163130020AE85 /* ErrorHandling.swift in Sources */,
 				61919A791E7072AE00705C6E /* ViewController.swift in Sources */,
 				61919A771E7072AE00705C6E /* AppDelegate.swift in Sources */,
 			);
