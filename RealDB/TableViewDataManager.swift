@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 struct TableViewDataManager {
     
-    static var personsList : [Person] = [Person]()
-    
-    
-    
+    static func refreshTable(tableView : UITableView){
+        DataBaseManager.syncPersonsList()
+        tableView.reloadData()
+    }
 }

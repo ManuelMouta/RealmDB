@@ -13,6 +13,7 @@ class Person : Object{
     dynamic var name    : String = ""
     dynamic var surname : String = ""
 
+
     static func createPerson(name:String,surname:String) -> Person{
         
         let person      = Person()
